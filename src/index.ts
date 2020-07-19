@@ -16,10 +16,11 @@ if (!process.env.PORT) {
   process.exit(1);
 }
 
-// const PORT: number = parseInt(process.env.APP_PORT as string, 10) || 3000;
-const PORT: string|number = process.env.PORT || 3000;
+const PORT: number = parseInt(process.env.PORT as string, 10) || 3000;
+// const PORT: string|number = process.env.PORT || 3000;
 const DB = String(process.env.APP_DB);
 const app = express();
+console.log(PORT)
 
 /**
  *  App Configuration
@@ -31,19 +32,14 @@ app.use(morgan('dev'));
  * Server Activation
  */
 
-// eslint-disable-next-line no-console
 app.get('/', (req, res) => res.send('Hello Node/Typescript starter!'));
-// eslint-disable-next-line consistent-return
 app.listen(PORT, () => {
   try {
     connect(DB, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useUnifiedTopology: true,
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
-    // eslint-disable-next-line no-console
     }).then(() => { console.log('connected'); })
-    // eslint-disable-next-line @typescript-eslint/no-empty-function
       .catch(() => { });
   } catch (error) {
     return error;
