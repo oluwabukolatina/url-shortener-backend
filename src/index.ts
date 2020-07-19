@@ -17,6 +17,6 @@ const app = express();
  */
 app.use(express.json());
 app.use(morgan('dev'));
-app.get('/', (req, res) => res.send('Hello Node/Typescript starter!'));
+app.get('/', (req, res) => console.log('Hello Node/Typescript starter!'));
 // eslint-disable-next-line import/prefer-default-export
 export { app };
