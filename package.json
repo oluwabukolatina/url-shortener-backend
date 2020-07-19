@@ -10,7 +10,7 @@
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,ts}' --quiet --fix",
     "lint:ts": "eslint --ext=jsx,ts,tsx src",
     "lint-and-fix": "eslint . --ext .ts --fix",
-    "start": "npm run build && node build/index.js"
+    "start": "npm run build && node build/www/server.js"
   },
   "keywords": [],
   "author": "",
