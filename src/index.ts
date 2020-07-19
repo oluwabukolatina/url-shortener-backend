@@ -17,6 +17,6 @@ const app = express();
  */
 app.use(express.json());
 app.use(morgan('dev'));
-app.get('/', (req, res) => console.log('Url s!'));
+app.get('/', (req, res) => res.send('Hello'));
 // eslint-disable-next-line import/prefer-default-export
 export { app };
