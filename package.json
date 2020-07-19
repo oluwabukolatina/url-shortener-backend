@@ -6,11 +6,11 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/www/server.ts",
     "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,ts}' --quiet --fix",
     "lint:ts": "eslint --ext=jsx,ts,tsx src",
     "lint-and-fix": "eslint . --ext .ts --fix",
-    "start": "npm run build && node build/index"
+    "start": "npm run build && node build/index.js"
   },
   "keywords": [],
   "author": "",
