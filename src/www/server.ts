@@ -10,6 +10,6 @@ if (!process.env.PORT) {
 const PORT = parseInt(process.env.PORT, 10) || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  db.connectToDb().then(() => console.log('conhhhhnected to db'))
+  db.connectToDb().then(() => console.log('conoijhhhhhnected to db'))
     .catch(() => console.log('sohjkldjhghwsjhdghjskjhmething went wrong'));
 });
