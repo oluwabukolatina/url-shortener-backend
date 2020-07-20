@@ -1,8 +1,8 @@
 import { Schema, model } from 'mongoose';
-import { Url } from '../interface/url.interface';
+import { Url } from './url.interface';
 
 const UrlSchema = new Schema({
-  newUrl: { type: String, required: true },
+  shortenedUrl: { type: String, required: true },
   originalUrl: { type: String, required: true },
 
 });

@@ -1,6 +1,6 @@
 import { Document } from 'mongoose';
 
 export interface Url extends Document{
-         newUrl: string;
+         shortenedUrl: string;
          originalUrl: string;
        }
