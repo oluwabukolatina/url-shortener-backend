@@ -1,6 +1,8 @@
 import { Document } from 'mongoose';
 
-export interface Url extends Document{
-         shortenedUrl: string;
-         originalUrl: string;
+export interface IUrl extends Document{
+  shortenedUrl: string;
+
+  originalUrl: string;
+  urlCode: string
        }

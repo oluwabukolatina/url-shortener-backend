@@ -1,10 +1,11 @@
 import { Schema, model } from 'mongoose';
-import { Url } from './url.interface';
+import { IUrl } from './url.interface';
 
 const UrlSchema = new Schema({
-  shortenedUrl: { type: String, required: true },
+  shortenedUrl: String,
   originalUrl: { type: String, required: true },
+  urlCode: String,
 
-});
+}, { timestamps: true });
 
-export default model<Url>('Url', UrlSchema);
+export default model<IUrl>('Url', UrlSchema);

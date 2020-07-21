@@ -29,6 +29,7 @@ exports.app = void 0;
 const dotenv = __importStar(require("dotenv"));
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
+const url_route_1 = __importDefault(require("./urls/url.route"));
 dotenv.config();
 /**
  * App Variables
@@ -42,5 +43,6 @@ exports.app = app;
  */
 app.use(express_1.default.json());
 app.use(morgan_1.default('dev'));
-app.get('/', (req, res) => res.send('Hello Node/Typescript starter!'));
+app.get('/', (req, res) => res.send('Hello'));
+app.use('/api/v1/urls', url_route_1.default);
 //# sourceMappingURL=index.js.map
