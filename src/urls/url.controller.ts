@@ -36,6 +36,7 @@ class UrlController {
         return res.status(500).json({ message: 'Something went wrong!', status: false });
       }
     } else {
+      // return new Error('The email was invalid');
       return res.status(400).json({ message: 'Not a valid URI', status: false });
     }
   }
