@@ -22,6 +22,7 @@ app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.get('/', (req, res) => res.send('Hello'));
+app.get('/terms', (req, res) => res.send('Terms'));
 app.use('/api/v1/urls', urlRoutes);
 // eslint-disable-next-line import/prefer-default-export
 export { app };

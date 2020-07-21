@@ -9,10 +9,10 @@ const BASE_URL = '127.0.0.1:2021/api/v1/urls';
 class UrlController {
   // @desc Generate Short Url
   static async generateShortenedUrl(req:Request, res: Response) {
-    const { url } = req.body;
-    if (validUrl.isUri(url)) {
+    const { originalUrl } = req.body;
+    if (validUrl.isUri(originalUrl)) {
       const query = {
-        originalUrl: url,
+        originalUrl,
       };
       const code = Helpers.generateAlphaNumericCharacters(8);
       try {
@@ -24,7 +24,7 @@ class UrlController {
 
         const data = {
           shortenedUrl,
-          originalUrl: url,
+          originalUrl,
           urlCode: code,
         };
         const create = await UrlService.generateUrl(data);
