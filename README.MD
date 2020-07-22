@@ -3,7 +3,7 @@ Write a simple full-stack application that provides URL shortening functionality
 
 
 # ShortenUrl
-> ShortenUrl helps users shortens url
+> ShortenUrl helps users shorten long url to shorter ones
 
 ## Functionality
 
