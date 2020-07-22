@@ -1,12 +1,12 @@
-import { connect } from 'mongoose';
+import { connect, disconnect } from 'mongoose';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
+const TEST = String(process.env.TEST_DB);
 const DB = String(process.env.APP_DB);
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 async function connectToDb() {
   try {
-    return await connect(DB, {
+    return await connect(process.env.ENV === 'Test' ? DB : TEST, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -14,4 +14,7 @@ async function connectToDb() {
     return error;
   }
 }
-export default { connectToDb };
+async function disconnectFromDB() {
+  return disconnect();
+}
+export default { connectToDb, disconnectFromDB };

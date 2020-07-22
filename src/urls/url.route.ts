@@ -4,12 +4,12 @@ import controller from './url.controller';
 const router = Router();
 const {
   generateShortenedUrl,
-  redirectToShortUrl,
+  redirectFromShortUrl,
   getAllGeneratedUrls,
 } = controller;
 
 // @route  POST /api/v1/urls
 router.post('/', generateShortenedUrl);
 router.get('/', getAllGeneratedUrls);
-router.get('/:url', redirectToShortUrl);
+router.get('/:url', redirectFromShortUrl);
 export default router;

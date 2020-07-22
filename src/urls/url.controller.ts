@@ -18,12 +18,13 @@ class UrlController {
       try {
         const response = await UrlService.getAUrl(query);
         if (response) {
-          return res
-            .status(400)
-            .json({ message: 'Url already exists', url: response });
+          return res.status(400).json({
+            message: 'Url already exists',
+            url: response,
+            status: false,
+          });
         }
         const shortenedUrl = `${BASE_URL}/${code}`;
-
         const data = {
           shortenedUrl,
           originalUrl,
@@ -52,13 +53,13 @@ class UrlController {
   }
 
   // @desc redirect to short url
-  static async redirectToShortUrl(req: Request, res: Response) {
+  static async redirectFromShortUrl(req: Request, res: Response) {
     const { url } = req.params;
     const query = { urlCode: url };
     try {
       const foundUrl = await UrlService.getAUrl(query);
       if (foundUrl) {
-        return res.redirect(foundUrl.originalUrl);
+        return res.status(200).redirect(foundUrl.originalUrl);
       }
       return res.status(404).json({ message: 'Url not found', status: false });
     } catch (error) {
