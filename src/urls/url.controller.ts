@@ -59,7 +59,7 @@ class UrlController {
     try {
       const foundUrl = await UrlService.getAUrl(query);
       if (foundUrl) {
-        return res.status(200).redirect(foundUrl.originalUrl);
+        return res.redirect(foundUrl.originalUrl);
       }
       return res.status(404).json({ message: 'Url not found', status: false });
     } catch (error) {
@@ -76,7 +76,7 @@ class UrlController {
         res.status(400).json({ Message: 'Could not get urls', status: false });
       return res
         .status(200)
-        .json({ message: 'Fetched Urls', status: true, data: urls });
+        .json({ message: 'Fetched Urls', status: true, urls });
     } catch (error) {
       return res
         .status(500)
