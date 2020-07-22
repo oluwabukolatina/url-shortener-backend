@@ -1,4 +1,11 @@
+# Task
 Write a simple full-stack application that provides URL shortening functionality. The application needs to use vue.js on the frontend (SPA) and have an express driven API on the backend. All the code should be written in Typescript. Styling of the frontend app should be done using vanilla CSS.
+
+
+# ShortenUrl
+> Betachop helps users shortens url
+
+## Functionality
 
 The specs for the application are:
 - A user needs to be able to enter a URL and they will get an 8 character (lowercase-alphanumeric) shortened version of the URL.
@@ -16,10 +23,6 @@ The specs for the application are:
 - Add any extra tweaks to increase usability.
 - When you are ready upload the code onto a public git repo somewhere and let us know.
 
-Thanks
-Aaron
-# ShortenUrl
-> Betachop helps users shortens url
 ## Getting Started
 
 >  [Technologies](#technologies-used) &middot; [Testing Tools](#testing-tools) &middot; [Installations](#installations) &middot; [API Endpoints](#api-endpoints) &middot; [Tests](#tests) &middot; [Acknowledgments](#acknowledgments) &middot; [Author](#author)
@@ -80,7 +83,7 @@ API Documentation generated with [swagger](https://fierce-wildwood-87279.herokua
 - Run test for all endpoints
   > run the command below
   ```shell
-  $ npm test
+  $ npm run test
   ```
 ## Author
 - [Tina](https://github.com/oluwabukolatina)
