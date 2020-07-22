@@ -8,7 +8,7 @@ const BASE_URL = '127.0.0.1:2021/api/v1/urls';
 
 class UrlController {
   // @desc Generate Short Url
-  static async generateShortenedUrl(req:Request, res: Response) {
+  static async generateShortenedUrl(req: Request, res: Response) {
     const { originalUrl } = req.body;
     if (validUrl.isUri(originalUrl)) {
       const query = {
@@ -18,7 +18,9 @@ class UrlController {
       try {
         const response = await UrlService.getAUrl(query);
         if (response) {
-          return res.status(400).json({ message: 'Url already exists', url: response });
+          return res
+            .status(400)
+            .json({ message: 'Url already exists', url: response });
         }
         const shortenedUrl = `${BASE_URL}/${code}`;
 
@@ -29,15 +31,23 @@ class UrlController {
         };
         const create = await UrlService.generateUrl(data);
         if (create) {
-          return res.status(201).json({ message: 'Url created', status: true, url: create });
+          return res
+            .status(201)
+            .json({ message: 'Url created', status: true, url: create });
         }
-        return res.status(400).json({ message: 'Unable to create url', status: false });
+        return res
+          .status(400)
+          .json({ message: 'Unable to create url', status: false });
       } catch (error) {
-        return res.status(500).json({ message: 'Something went wrong!', status: false });
+        return res
+          .status(500)
+          .json({ message: 'Something went wrong!', status: false });
       }
     } else {
       // return new Error('The email was invalid');
-      return res.status(400).json({ message: 'Not a valid URI', status: false });
+      return res
+        .status(400)
+        .json({ message: 'Not a valid URI', status: false });
     }
   }
 
@@ -52,17 +62,24 @@ class UrlController {
       }
       return res.status(404).json({ message: 'Url not found', status: false });
     } catch (error) {
-      return res.status(500).json({ message: 'Something went wrong', status: false });
+      return res
+        .status(500)
+        .json({ message: 'Something went wrong', status: false });
     }
   }
 
   static async getAllGeneratedUrls(req: Request, res: Response) {
     try {
       const urls = await UrlService.getAllUrls();
-      if (!urls) res.status(400).json({ Message: 'Could not get urls', status: false });
-      return res.status(200).json({ message: 'Fetched Urls', status: true, data: urls });
+      if (!urls)
+        res.status(400).json({ Message: 'Could not get urls', status: false });
+      return res
+        .status(200)
+        .json({ message: 'Fetched Urls', status: true, data: urls });
     } catch (error) {
-      return res.status(500).json({ Message: 'Something went wrong', status: false });
+      return res
+        .status(500)
+        .json({ Message: 'Something went wrong', status: false });
     }
   }
 }

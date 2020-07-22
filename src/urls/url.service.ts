@@ -9,7 +9,7 @@ class UrlService {
     }
   }
 
-  static async generateUrl(value:any) {
+  static async generateUrl(value: any) {
     try {
       return Model.create(value);
     } catch (error) {
