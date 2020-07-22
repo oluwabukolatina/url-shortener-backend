@@ -3,7 +3,7 @@ Write a simple full-stack application that provides URL shortening functionality
 
 
 # ShortenUrl
-> Betachop helps users shortens url
+> ShortenUrl helps users shortens url
 
 ## Functionality
 
