@@ -6,7 +6,7 @@ const TEST = String(process.env.TEST_DB);
 const DB = String(process.env.APP_DB);
 async function connectToDb() {
   try {
-    return await connect(process.env.Env === 'Test' ? DB : TEST, {
+    return await connect(process.env.Env === 'Test' ? TEST : DB, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
