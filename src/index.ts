@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
+import cors from 'cors';
 import urlRoutes from './urls/url.route';
 import swaggerDocument from '../swagger.json';
 
@@ -18,6 +19,7 @@ const app = express();
 /**
  *  App Configuration
  */
+app.use(cors);
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
