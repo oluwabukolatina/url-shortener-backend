@@ -3,7 +3,7 @@ const Helpers = {
   generateAlphaNumericCharacters(length: number) {
     let result = '';
     const characters =
-      '012ABCDEFGHIJKLMNOPQRSTU89abcdefghijklmnopqrstuvwxyz34567VWXYZ';
+      '01ABCDEFGHIJ2LMNOPQRSTU89abcdefghijklmnopq456rstuvwxyz37VWXYZ';
     const charactersLength = characters.length;
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < length; i++) {
