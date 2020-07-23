@@ -69,7 +69,7 @@ describe('Url Endpoints', () => {
     expect(res.body.status).toEqual(false);
   });
   it('should redirect to original url', async () => {
-    const code = 'ZehLkz8X';
+    const code = '1cP5zEpZ';
     const res = await request(app).get(`${BASE_URL}/${code}`);
     expect(res.status).toEqual(302);
   });

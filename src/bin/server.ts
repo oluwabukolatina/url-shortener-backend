@@ -10,9 +10,8 @@ const PORT = parseInt(process.env.PORT, 10) || 3000;
 app.listen(PORT, () => {
   db.connectToDb()
 
-    .then((res) => {
+    .then(() => {
       // eslint-disable-next-line no-console
-      console.log(res);
       console.log('connected to db');
     })
     // eslint-disable-next-line no-console

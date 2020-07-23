@@ -19,7 +19,7 @@ const app = express();
 /**
  *  App Configuration
  */
-app.use(cors);
+app.use(cors());
 app.use(express.json());
 app.use(morgan('dev'));
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
