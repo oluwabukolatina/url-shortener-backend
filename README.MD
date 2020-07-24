@@ -33,7 +33,7 @@ The specs for the application are:
 
 ## Heroku App
 
-Application is deployed on Heroku. Use public URL [https://fierce-wildwood-87279.herokuapp.com](https://betachop.herokuapp.com) with API endpoints.
+Application is deployed on Heroku. Use public URL [https://fierce-wildwood-87279.herokuapp.com](https://fierce-wildwood-87279.herokuapp.com) with API endpoints.
 
 ## Swagger API Documentation
 
