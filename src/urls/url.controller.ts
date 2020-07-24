@@ -4,8 +4,7 @@ import Helpers from '../utils/helpers';
 import UrlService from './url.service';
 
 // const BASE_URL = 'https://pbid.io';
-// const BASE_URL = '127.0.0.1:2021/api/v1/urls';
-const BASE_URL = 'https://fierce-wildwood-87279.herokuapp.com';
+const BASE_URL = 'https://fierce-wildwood-87279.herokuapp.com/api/v1/urls';
 
 class UrlController {
   // @desc Generate Short Url
