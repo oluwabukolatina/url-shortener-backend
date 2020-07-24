@@ -95,6 +95,11 @@ API Documentation generated with [swagger](https://fierce-wildwood-87279.herokua
   $ npm run test
   ```
 
+## Docker 
+> Run the command below
+```shell
+  $ docker pull oluwabukolatina/url-shortner
+```
 ## Author
 
 - [Tina](https://github.com/oluwabukolatina)
