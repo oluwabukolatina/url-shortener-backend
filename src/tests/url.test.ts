@@ -42,16 +42,18 @@ describe('Url Endpoints', () => {
     expect(res.body.status).toEqual(false);
     expect(res.body.message).toEqual('Url already exists');
   });
-  // it('it generates a url', async () => {
-  //   const url = { originalUrl: 'https://www.youtube.com/watch?v=aTxXZs7bq3w' };
-  //   const res = await request(app).post(`${BASE_URL}`).send(url);
-  //   expect(res.status).toEqual(201);
-  //   expect(typeof res.body).toBe('object');
-  //   expect(typeof res.body.url).toBe('object');
-  //   expect(res.body.status).toEqual(true);
-  //   expect(res.body.message).toEqual('Url created');
-  //   expect(res.body.url).toHaveProperty('_id');
-  // });
+  it('it generates a url', async () => {
+    const url = {
+      originalUrl: 'https://github.com/oluwabukolatina/url-shortner-frontend',
+    };
+    const res = await request(app).post(`${BASE_URL}`).send(url);
+    expect(res.status).toEqual(201);
+    expect(typeof res.body).toBe('object');
+    expect(typeof res.body.url).toBe('object');
+    expect(res.body.status).toEqual(true);
+    expect(res.body.message).toEqual('Url created');
+    expect(res.body.url).toHaveProperty('_id');
+  });
   it('should get all urls', async () => {
     const res = await request(app).get(`${BASE_URL}`);
     expect(res.status).toEqual(200);
@@ -69,7 +71,7 @@ describe('Url Endpoints', () => {
     expect(res.body.status).toEqual(false);
   });
   it('should redirect to original url', async () => {
-    const code = '1cP5zEpZ';
+    const code = 'uUnFBUMJ';
     const res = await request(app).get(`${BASE_URL}/${code}`);
     expect(res.status).toEqual(302);
   });
