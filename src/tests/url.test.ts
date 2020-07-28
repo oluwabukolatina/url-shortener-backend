@@ -63,7 +63,7 @@ describe('Url Tests', () => {
       const url = {
         originalUrl:
           // eslint-disable-next-line max-len
-          'https://medium.com/@theoluwabukolatina/understanding-redux-build-a-news-app-with-react-part-1-96ee4fa8b443',
+          'https://mediuuum.com/@theoluwabukolatina/understanding-redux-build-a-news-app-with-react-part-1-96ee4fa8b443',
       };
       chai
         .request(app)
@@ -115,7 +115,7 @@ describe('Url Tests', () => {
         .request(app)
         .get(`${BASE_URL}/${code}`)
         .end((err, res) => {
-          res.should.have.status(200);
+          res.should.have.status(304);
           done();
         });
     });
